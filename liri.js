@@ -54,7 +54,6 @@ spotifyClient.search({ type: 'track', query: (value || 'alabama Pines') , limit:
       //album name
       console.log("Album: " + songData.album.name);
       console.log("-----------------------");
-      console.log(value);
     }
   } else{
     console.log('Sorry! Try another jammin tune!');
@@ -90,8 +89,8 @@ function doWhatItSays() {
     return console.log(error);
   }
   var dataArr = data.split(",");
-  var ArgOne = dataArr[0];
-  var ArgTwo = dataArr[1];
-console.log(ArgOne,ArgTwo);
+  if (dataArr[0] === 'showSpotify'){
+    showSpotify(dataArr[1]);
+  };
 });
 }
